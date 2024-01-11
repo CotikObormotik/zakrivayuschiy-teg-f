@@ -33,15 +33,14 @@
 }
 
 .header {
-  display: grid;
-  grid-template-rows: 52% 11% 1fr;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: var(--border);
   margin-block-start: 102px;
   margin-block-end: 104px;
   background-color: var(--background-color);
-  height: clamp(20.188rem, 19.285rem + 3.85vw, 22.75rem);
   width: 100vw;
 }
 
@@ -69,7 +68,8 @@
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: normal;
-  align-self: end;
+  align-self: center;
+  padding-block-start: 120px;
 }
 
 .another-title {
@@ -79,7 +79,8 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   line-height: normal;
   justify-content: center;
-  align-self: end;
+  align-self: center;
+  padding-block-start: 20px;
 }
 
 @media (width >= 1440px) {
@@ -92,6 +93,8 @@
   display: flex;
   justify-content: center;
   margin-inline-start: 22px;
+  margin-block-end: 25px;
+  padding-block-start: 25px;
 }
 
 .theme-menu__list {
@@ -119,18 +122,6 @@
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-}
-
-@keyframes arrow {
-  from {
-    left: -15px;
-  }
-  50% {
-    left: -11px;
-  }
-  100% {
-    left: -15px;
-  }
 }
 
 .theme-menu__button[disabled] {
@@ -317,7 +308,7 @@
 }
 
 .button__text {
-  font-family: var(--font-press);
+  font-family: var(--font-press), sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
@@ -410,32 +401,11 @@
   object-position: center;
 }
 
-@keyframes heart {
-  from {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
 .like-icon.is-liked .sparks {
   animation-name: sparks;
   animation-duration: 0.3s;
   animation-delay: 0.3s;
   animation-timing-function: ease-in;
-}
-
-@keyframes sparks {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .footer {
@@ -498,8 +468,11 @@
   mix-blend-mode: difference;
 }
 
-.floppy1 {
-  fill: var(--color-like);
+@media (width >= 1440px) {
+  .floopy-box {
+    width: 21px;
+    height: 21px;
+  }
 }
 
 .footer-title {
@@ -520,7 +493,6 @@
   align-items: center;
   padding: 30px 40px;
   min-width: 341px;
-  min-height: 194px;
   background-color: var(--color-bg);
   border: var(--border);
 }
@@ -528,7 +500,6 @@
 @media (width >= 376px) {
   .dialog[open] {
     max-width: 357px;
-    max-height: 193px;
   }
 }
 
@@ -560,10 +531,10 @@
   color: var(--color-accent);
 }
 
-.floppy-dialog svg {
+.floppy {
   width: 39px;
   height: 39px;
-  fill: #000;
+  fill: var(--color-like);
 }
 
 .button__text_dailog {

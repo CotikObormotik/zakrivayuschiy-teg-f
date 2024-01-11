@@ -30,3 +30,28 @@
   --color-bg: #000;
   --heart-contour: #00cc14;
 }
+
+@media (prefers-color-scheme: dark) {
+  .theme-dark {
+    --color-text: #00cc14;
+    --main-weight-text: 465;
+    --title-weight-text: 785;
+    color: var(--color-text);
+    font-weight: var(--main-weight-text);
+    --gradient: repeating-linear-gradient(
+        90deg,
+        #000 0 2px,
+        rgba(0 0 0 / 0) 2px 4px
+      ),
+      repeating-linear-gradient(180deg, #000 0 2px, rgba(0 0 0 / 0) 2px 4px),
+      repeating-linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+    --background-color: #000;
+    --border: 2px solid #00cc14;
+    --text-shadow: #000;
+    --border-color: #00cc14;
+    --color-accent: #00cc14;
+    --color-like: #00cc14;
+    --color-bg: #000;
+    --heart-contour: #00cc14;
+  }
+}
